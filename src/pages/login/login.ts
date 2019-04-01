@@ -51,17 +51,8 @@ export class LoginPage {
     this.navCtrl.push(TermsandconditionsPage);
   }
 
-  signIn() {
-    this.submitAttempt = true;
-    if (this.loginForm.valid) {
-      this.loader = this.loadingCtrl.create({
-        content: "Please wait..."
-      });
-
-      this.loader.present();     
-      this.loader.dismiss();
-      this.navCtrl.setRoot(HomePage);
-    }
+  signIn() {  
+      this.navCtrl.setRoot(HomePage);  
   }
 
   loginUser(username, password){

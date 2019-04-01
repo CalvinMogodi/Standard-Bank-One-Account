@@ -111,20 +111,6 @@ export class RegisterPage {
   }
 
   next() {
-
-    var loader = this.loadingCtrl.create({
-      content: "Please wait..."
-    });
-
-    loader.present();
-
-    loader.dismiss();
-    let toast = this.toastCtrl.create({
-      message: 'You have signed up successful.',
-      duration: 2000,
-      position: 'bottom'
-    });
-    toast.present(toast);
     this.navCtrl.setRoot(LoginPage);
   }
 }
