@@ -1,0 +1,48 @@
+<ion-header transparent class="myheader">
+  <ion-navbar transparent>
+      <ion-title>
+          Register
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="background">
+      <form [formGroup]="signUpFirstForm">
+          <ion-list>
+              <ion-item [class.invalid2]="!signUpFirstForm.controls.name.valid && (signUpFirstForm.controls.name.dirty || submitAttempt)">
+                  <ion-label floating>Name</ion-label>
+                  <ion-input [(ngModel)]="account.name" formControlName="name" [class.invalid2]="!signUpFirstForm.controls.name.valid && (signUpFirstForm.controls.name.dirty || submitAttempt)"
+                      type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>Surname</ion-label>
+                  <ion-input [(ngModel)]="account.surname" formControlName="surname" [class.invalid]="!signUpFirstForm.controls.surname.valid && (signUpFirstForm.controls.surname.dirty || submitAttempt)"
+                      type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>Cell Phone</ion-label>
+                  <ion-input [(ngModel)]="account.cellPhone" formControlName="cellPhone" [class.invalid]="!signUpFirstForm.controls.cellPhone.valid && (signUpFirstForm.controls.cellPhone.dirty || submitAttempt)"
+                      type="number"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>Email</ion-label>
+                  <ion-input [(ngModel)]="account.email" formControlName="email" [class.invalid]="!signUpFirstForm.controls.email.valid && (signUpFirstForm.controls.email.dirty || submitAttempt)"
+                      type="email"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>Password</ion-label>
+                  <ion-input [(ngModel)]="account.password" formControlName="password" [class.invalid]="!signUpFirstForm.controls.password.valid && (signUpFirstForm.controls.password.dirty || submitAttempt)"
+                      type="password"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>Confirm Password</ion-label>
+                  <ion-input [(ngModel)]="account.confirmPassword" formControlName="confirmPassword" [class.invalid]="!signUpFirstForm.controls.confirmPassword.valid && (signUpFirstForm.controls.confirmPassword.dirty || submitAttempt)"
+                      type="password"></ion-input>
+              </ion-item>
+              <div padding>
+                  <button ion-button block class="btn" (click)="next()">Sign Up</button>
+                  <p *ngIf="showPasswordError" style="color: red;font-size: xx-small;text-align: center;"> Passwords don't match</p>
+              </div>
+          </ion-list>
+      </form>
+</ion-content>
