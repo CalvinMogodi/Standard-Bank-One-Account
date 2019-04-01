@@ -1,18 +1,33 @@
 <ion-header class="myheader">
   <ion-navbar>
     <ion-title>Standard Bank One Account</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="logout()">
+          <ion-icon name="lock" style="color: white !important;" (click)="logout()"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-card style="border-radius: 10px;">
-        <ion-card-content style="text-align: center;padding: 20% 16px !important;">
-          <ion-icon name="add">Add Card</ion-icon>    
-        </ion-card-content>    
+    <ion-card class="maincard" padding (click)="viewAcountDetail()" *ngIf="hasAccount == true">   
+        <ion-card-content >
+            <img style="width: 30px !important;height: 30px !important; margin-top: 25px;" src="../../assets/imgs/chip.png">
+            <label style="color: white;font-size: x-large;">5477 4534 5484 5612</label><br>           
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+                <label style="color: white;">04/12</label><br>
+            <label style="color: white;">Mr John Doe</label>
+            </ion-col>
+            <ion-col>
+                <img style="width: 40% !important;float: right;margin-right: -10px" src="../../assets/imgs/mastercard.png">
+            </ion-col>
+        </ion-row>
     </ion-card>
-  <ion-card style="border-radius: 10px;">
-    <ion-card-content style="text-align: center;padding: 20% 16px !important;">
-      <ion-icon name="add">Add Card</ion-icon>    
+  <ion-card style="background-color: gainsboro;" (click)="addNewAcount()" *ngIf="hasAccount != true">
+    <ion-card-content style="text-align: center;padding: 20% 16px !important;font-size: large;">
+      <ion-icon name="add">Add Account</ion-icon>    
     </ion-card-content>    
 </ion-card>
 </ion-content>

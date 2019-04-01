@@ -1,0 +1,48 @@
+<!--
+  Generated template for the AccountDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Account Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card class="maincard" padding (click)="viewAcountDetail()">   
+        <ion-card-content >
+            <img style="width: 30px !important;height: 30px !important; margin-top: 25px;" src="../../assets/imgs/chip.png">
+            <label style="color: white;font-size: x-large;">5477 4534 5484 5612</label><br>           
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+                <label style="color: white;">04/12</label><br>
+            <label style="color: white;">Mr John Doe</label>
+            </ion-col>
+            <ion-col>
+                <img style="width: 40% !important;float: right;margin-right: -10px" src="../../assets/imgs/mastercard.png">
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <ion-row style="margin-top: -15px; padding: 15px;">
+        <ion-col>
+          <label (click)="edit()" style="color: #03a" clear small class="login-links">Edit</label>
+        </ion-col>
+        <ion-col>
+          <label clear small class="login-links" style="color:red;float: right;" (click)="delete()">Delete</label>
+        </ion-col>
+      </ion-row>
+
+      
+<ion-list>
+    <ion-list-header style="font-size: larger;margin-bottom: -15px;">
+      <ion-label>Benefits</ion-label>
+    </ion-list-header>
+    <ion-item style="font-size: small;">24/7 Banker</ion-item>
+    <ion-item style="font-size: small;">Travel Discounts</ion-item>
+    <ion-item style="font-size: small;">POS</ion-item>
+  </ion-list>
+</ion-content>
